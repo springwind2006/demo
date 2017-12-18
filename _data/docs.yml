@@ -1,11 +1,16 @@
-- title: Getting Started
+- title: 开发手册
   docs:
   - home
-  - themes
-  - customization
+  - install
+  - config
+  - route
+  - controller
+  - view
+  - model
+  - middleware
 
-- title: Examples
-  docs:
-  - cheatsheet
-  - font-awesome
-  - bootstrap
+#- title: 范例
+#  docs:
+#  - cheatsheet
+#  - font-awesome
+#  - bootstrap

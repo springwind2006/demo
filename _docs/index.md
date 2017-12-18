@@ -1,50 +1,49 @@
 ---
-title: Welcome
+title: 欢迎使用
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-## Getting started
+## 系统简介
+&emsp;&emsp;steeze是一个优雅、简洁而又高效的PHP开源框架，在整合了知名框架ThinkPHP和Laravel优点的同时，优化了底层架构，增强了功能实现。支持容器、模型、依赖注入、中间件、路由配置、自定义模版引擎功能，支持多模块独立配置和集成开发，同时支持WEB和Cli两种运行模式。
 
-[GitHub Pages](https://pages.github.com) can automatically generate and serve the website for you.
-Let's say you have a username/organisation `my-org` and project `my-proj`; if you locate Jekyll source under `docs` folder of master branch in your repo `github.com/my-org/my-proj`, the website will be served on `my-org.github.io/my-proj`.
-The good thing about coupling your documentation with the source repo is, whenever you merge features with regarding content to master branch, it will also be published in the webpage instantly.
+## 系统运行环境要求
+- PHP >= 5.6
+- PHP PDO 扩展
+- PHP Mbstring 扩展
+- PHP XML 扩展
 
-1. Just download the source from [github.com/aksakalli/jekyll-doc-theme](https://github.com/aksakalli/jekyll-doc-theme/master) into your repo under `docs` folder.
-2. Edit site settings in  `_config.yml` file according to your project.
-3. Replace `favicon.ico` and `img/logonav.png` with your own logo.
-
-## Writing content
-
-### Docs
-
-Docs are [collections](https://jekyllrb.com/docs/collections/) of pages stored under `_docs` folder. To create a new page:
-
-**1.** Create a new Markdown as `_docs/my-page.md` and write [front matter](https://jekyllrb.com/docs/frontmatter/) & content such as:
+## 开始使用
+### 1. 安装
+```
+git clone https://github.com/springwind2006/steeze.git
+```
+### 2. Public 目录
+安装完成之后，需要将Web服务器的根目录指向public目录。该目录下的index.php文件将作为所有进入应用程序的 HTTP 请求的前端控制器。
+### 3. 配置文件
+框架的所有配置文件都放在 storage/Conf 目录中。除了route和middleware，其余所有的配置都可以在模块目录配置，模块中配置会覆盖storage/Conf目录下的同名配置键值。
+### 4. 目录权限
+安装完成之后，需要将storage目录设置为可读写
+### 5. 优雅链接的配置
+#### Apache
+Steeze 使用 public/.htaccess 文件来为前端控制器提供隐藏了 index.php 的优雅链接。如果你的 Steeze 使用了 Apache 作为服务容器，请务必启用 mod_rewrite模块，让服务器能够支持 .htaccess 文件的解析。
+如果 Steeze 附带的 .htaccess 文件不起作用，就尝试用下面的方法代替：
 
 ```
----
-title: My Page
-permalink: /docs/my-page/
----
+Options +FollowSymLinks
+RewriteEngine On
 
-Hello World!
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+```
+#### Nginx
+如果你使用的是 Nginx，在你的站点配置中加入以下内容，它将会将所有请求都引导到 index.php 前端控制器：
+
+```
+location / {
+    try_files $uri $uri/ /index.php?$query_string;
+}
 ```
 
-**2.** Add the pagename to `_data/docs.yml` file in order to list in docs navigation panel:
 
-```
-- title: My Group Title
-  docs:
-  - my-page
-```
-
-### Blog posts
-
-Add a new Markdown file such as `2017-05-09-my-post.md` and write the content similar to other post examples.
-
-### Pages
-
-The home page is located under `index.html` file. You can change the content or design completely different welcome page for your taste. (You can use [bootstrap componenets](http://getbootstrap.com/components/))
-
-In order to add a new page, create a new html or markdown file under root directory and link it in `_includes/topnav.html`.
