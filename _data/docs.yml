@@ -1,7 +1,6 @@
-- title: 开发手册
+- title: 开发文档
   docs:
   - home
-  - install
   - config
   - route
   - controller
