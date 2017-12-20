@@ -1,6 +1,7 @@
 - title: 开发文档
   docs:
   - home
+  - start
   - config
   - route
   - controller
