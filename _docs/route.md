@@ -11,7 +11,7 @@ permalink: /docs/route/
 全局路由配置位于storage/Conf/route.php文件中，全局路由配置中可以设置默认的路由，当系统根据主机名（域名）没有找到匹配域时，使用默认路由配置。  
 默认路由配置示例：
 
-{% highlight ruby %}
+```
 return [
 	'default' => [
 		'/test'=> function(){
@@ -20,7 +20,7 @@ return [
 		'/list'=> 'content/list@home'
 	]
 ];
-{% endhighlight %}
+```
 除了默认的路由配置，可以根据特定域名配置，域名支持顶层子域名通配符，例如：
 
 ```
@@ -75,7 +75,7 @@ return [
 	]
 ];
 ```
-默认路由绑定系统默认模块名，也可以使用“bind_module”环境变量指定，详情查看[系统配置部分](config.md)
+默认路由绑定系统默认模块名，也可以使用“bind_module”环境变量指定，详情查看[系统配置部分](http://steeze.cn/docs/config)
 
 
 ### 2. 独立域配置
