@@ -140,19 +140,21 @@ return [
 **特别提示**：控制器处理器和Closure函数的返回值可以是字符串、数组和视图：字符串直接输出到浏览器、数组以json字符串的方式输出、视图以渲染后的模版输出。
 
 ## 四、路由参数
-在路由中可以配置参数，路由参数之后会按照名称注入到控制器路由处理器中，对于Closure函数路由处理器，是按照参数顺序依次传入处理函数。  
+在路由中可以配置参数，路由参数之后会按照名称注入到控制器（或Closure函数）路由处理器中。  
 例如：
 
 ```
 return [
 	'default'=>[
 		'/info/{userid}'=> 'user/info@home',
-		'/list/{catid}/{page}'=> function($catid,$page){
+		'/list/{catid}/{page}'=> function($page,$catid){
 			echo $catid.':'.page;
 		},
 	]
 ];
 ```
+**注**：在以上实例中，由于$page和$catid参数是按照参数名称传入，因此参数传入顺序可以跟路由参数配置顺序不同。
+
 Home模块下User控制器的info方法如下：
 
 ```
