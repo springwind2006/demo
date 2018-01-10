@@ -1,84 +1,8 @@
 ---
-title: 控制器
-permalink: /docs/controller/
+title: 参数类型
+permalink: /docs/controller/param_type/
 ---
 
-## 一、简介
-控制器位于每个模块的“Controller”目录下，并继承自“Library\Controller”类型。
-控制器的命名空间为“App\模块名称（首字母大写）\Controller“，例如home模块下的控制器命名空间为"App\Home\Controller"。  
-一个完整的控制器代码如下所示：
-
-```
-<?php
-namespace App\Home\Controller;
-use Library\Controller;
-use Library\Model;
-use Library\Request;
-use Library\Response;
-
-class Index extends Controller{
-	
-	private $request;
-	private $response;
-	
-	public function __construct(Request $request,Response $response){
-		$this->request=$request;
-		$this->response=$response;
-	}
-	
-	/**
-	* 对外公开方法，返回字符串
-	* @param string $name 为路由参数注入
-	* @return 返回字符串到用户浏览器
-	*/
-	public function hello($name='Guest'){
-		return 'Hello！'.$name.'， welcome to visit！';
-	}
-	
-	/**
-	* 对外公开方法，返回json
-	* @param string $name 可以为路由参数注入
-	* @param int $age 可以为路由参数注入
-	* @return 返回json到用户浏览器
-	*/
-	public function info($name='Guest',$age=18){
-		return ['name'=>'name','age'=>$age];
-	}
-	
-	/**
-	* 对外公开方法，返回渲染后的视图
-	* @param Library\Model $user为路由参数传入并系统处理后的用户模型对象
-	* @return 返回渲染后的视图对象到浏览器
-	*/
-	public function profile(Model $user){
-		$this->assign('user',$user);
-		$this->display();
-	}
-	
-	/**
-	* 内部模版标签调用方法，渲染后的子视图嵌入到主视图中
-	* @param int $id 由模版标签参数传入
-	*/
-	public function _show($id){
-		$this->assign('id',$id);
-		$this->display();
-	}
-}
-
-```
-
-## 二、方法分类
-控制器的方法类型有三种：对外开放方法、内部标签调用方法和其它方法。
-### 1. 对外开放方法
-对外开放的方法使用“public”声明，方法名称以字母开头。  
-在路由控制器中可以配置此类方法的处理，具体配置方式参见[路由配置模块](http://steeze.cn/docs/route/)
-### 2. 内部模版标签调用方法
-对外开放的方法使用“public”声明，方法名称以下划线“_”开头。  
-此类方法用在模版标签中调用，具体调用方式参见[模版视图模块](http://steeze.cn/docs/view/)
-### 3. 其它方法
-也可以在控制器中使用私有方法或者魔术方法，但通常不建议使用，相关的业务处理可以放在对应的服务类中去完成。
-
-## 三、方法参数分类
 控制器的方法参数类型有三种：路由参数、自定义类参数和其它基本类型参数。
 ### 1. 路由参数
 路由参数在路由中配置，然后系统会根据参数名称传入到控制器方法中。  
@@ -172,10 +96,5 @@ class User extends Controller{
 对于内部标签调用方法，会根据标签参数名称传入。
 
 
-## 四、返回类型
-在控制器方法中，支持直接返回字符串、数组、对象和视图。返回字符串将直接输出到浏览器、返回数组和对象将会转换为json对象输出到浏览器、返回视图对象将会模版渲染后输出。  
-  
-***特别提示***：  
-如果返回的对象是从模型类Library\Model继承或者是Library\Model自身的类实例，返回的json对象是模型最后一次查询后获得的数据集。
 
 

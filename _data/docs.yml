@@ -1,16 +1,47 @@
-- title: 开发文档
+- title: 开始使用
   docs:
-  - home
-  - start
-  - config
-  - route
-  - controller
-  - view
-  - model
-  - middleware
+  - startup/index
+  - startup/environment
+  - startup/install
+  - startup/quickstart
+  - startup/entrance_file
+  - startup/directory_structure
+  - startup/develop_standard
+  
+- title: 配置
+  docs:
+  - config/global_config
+  - config/application_config
+  - config/get_config
+  - config/set_config
 
-#- title: 范例
-#  docs:
-#  - cheatsheet
-#  - font-awesome
-#  - bootstrap
+
+- title: 路由
+  docs:
+  - route/index
+  - route/config_type
+  - route/config_format
+  - route/route_param
+  - route/route_middleware
+  
+- title: 控制器
+  docs:
+  - controller/index
+  - controller/method_type
+  - controller/param_type
+  - controller/return_type
+
+- title: 视图
+  docs:
+  - view/index
+
+- title: 模型
+  docs:
+  - model/index
+ 
+- title: 高级特性
+  docs:
+  - advance/middleware
+  - advance/container
+  - advance/ioc
+  - advance/swoole

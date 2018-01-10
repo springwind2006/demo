@@ -1,6 +1,6 @@
 ---
 title: 中间件
-permalink: /docs/middleware/
+permalink: /docs/advance/middleware/
 ---
 
 完善中...

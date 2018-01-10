@@ -1,6 +1,6 @@
 ---
-title: 快速入门
-permalink: /docs/start/
+title: 快速体验
+permalink: /docs/startup/quickstart/
 ---
 
 配置好运行环境之后，进入Storage/Conf目录，打开route.php文件  

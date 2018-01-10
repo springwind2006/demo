@@ -1,25 +1,23 @@
 ---
-title: 开始使用
-permalink: /docs/home/
-redirect_from: /docs/index.html
+title: 安装Steeze
+permalink: /docs/startup/install/
 ---
 
-## 系统简介
-&emsp;&emsp;steeze是一个优雅、简洁而又高效的PHP开源框架，在整合了知名框架ThinkPHP和Laravel优点的同时，重写了底层架构，增强了功能实现。支持swoole模型运行，支持容器、模型、依赖注入、中间件、路由配置、自定义模版引擎功能，支持多模块独立配置和集成开发，同时支持WEB和Cli两种运行模式。
+### 1. 获取Steeze
+Steeze框架已托管在github上，地址是 <https://github.com/springwind2006/steeze> 
+  
+安装git后执行如下命令即可获取代码文件：
 
-## 系统运行环境要求
-- PHP >= 5.6
-- PHP PDO 扩展
-- PHP Mbstring 扩展
-- PHP XML 扩展
-
-## 开始使用
-### 1. 安装
 ```
 git clone https://github.com/springwind2006/steeze.git
 ```
-### 2. Public 目录
-安装完成之后，需要将Web服务器的根目录指向public目录。该目录下的index.php文件将作为所有进入应用程序的 HTTP 请求的前端控制器。
+
+也可以进入 <https://github.com/springwind2006/steeze/releases>下载最新版本  
+  
+下载完成并解压，进入系统框架根目录
+
+### 2. 设置public目录
+安装完成之后，需要将Web服务器的根目录指向public目录。该目录下的index.php文件将作为所有进入应用程序的 HTTP 请求的唯一入口。
 ### 3. 配置文件
 框架的所有配置文件都放在 storage/Conf 目录中。除了route和middleware，其余所有的配置都可以在模块目录配置，模块中配置会覆盖storage/Conf目录下的同名配置键值。
 ### 4. 目录权限
@@ -45,5 +43,3 @@ location / {
     try_files $uri $uri/ /index.php?$query_string;
 }
 ```
-
-

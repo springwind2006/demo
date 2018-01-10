@@ -102,3 +102,33 @@ h1{
 .navbar-form .has-feedback .form-control-feedback{
   top:10px
 }
+
+.panel-heading{
+	padding:0;
+	height:40px;
+}
+
+.panel-heading h4{
+	width:100%;
+	height:100%;
+}
+
+.panel-title a{
+	display:block;
+	width:100%;
+	height:100%;
+	float:left;
+	padding:10px 20px;
+}
+
+.panel-title a:hover{
+	text-decoration:none;
+}
+
+.list-group-item{
+	padding:10px 17px;
+}
+
+#markdown-content-container p{
+	text-indent:2em;
+}
