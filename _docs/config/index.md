@@ -1,6 +1,6 @@
 ---
 title: 全局配置
-permalink: /docs/config/global_config/
+permalink: /docs/config/index/
 ---
 
 全局配置是所有应用共享的配置，位于STORAGE_PATH/Conf目录中，所有的配置以返回数组的方式，键名区分大小写  

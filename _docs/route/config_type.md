@@ -71,7 +71,7 @@ return [
 	]
 ];
 ```
-默认路由绑定系统默认模块名，也可以使用“bind_module”环境变量指定，详情查看[系统配置部分](http://steeze.cn/docs/config)
+默认路由绑定系统默认模块名，也可以使用“bind_module”环境变量指定，详情查看 [系统配置部分](/docs/config/index)
 
 
 ### 2. 独立域配置
