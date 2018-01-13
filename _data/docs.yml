@@ -39,8 +39,7 @@
   - view/custom_tags
 
 - title: 模型
-  docs:
-  - model/index
+  url: model/index
  
 - title: 高级特性
   docs:

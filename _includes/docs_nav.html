@@ -1,24 +1,36 @@
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 {% for section in site.data.docs %}
   <div class="panel panel-default">
-    <div class="panel-heading">
-    	  <h4 class="panel-title">
-	    	  <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.index}}" aria-expanded="false" aria-controls="collapse-{{forloop.index}}">
-			{{ section.title }}
-	      </a>
-      </h4>
-    </div>
-    <div id="collapse-{{forloop.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <ul class="list-group">
-        {% for item in section.docs %}
-          {% assign item_url = item | prepend:"/docs/" | append:"/" %}
-          {% assign p = site.docs | where:"url", item_url | first %}
-          <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ p.url  | prepend: site.baseurl }}">
-          &nbsp;&nbsp;&nbsp; <span style="font-size:6px">&gt;</span> &nbsp;{{ p.title }}
-          </a>
-        {% endfor %}
-      </ul>
-    </div>
+  	{% if section.docs != null %}
+	    <div class="panel-heading">
+	    	  <h4 class="panel-title">
+		    	  <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{forloop.index}}" aria-expanded="false" aria-controls="collapse-{{forloop.index}}">
+				{{ section.title }}
+		      </a>
+	      </h4>
+	    </div>
+	    <div id="collapse-{{forloop.index}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+	      <ul class="list-group">
+	        {% for item in section.docs %}
+	          {% assign item_url = item | prepend:"/docs/" | append:"/" %}
+	          {% assign p = site.docs | where:"url", item_url | first %}
+	          <a class="list-group-item {% if item_url == page.url %}active{% endif %}" href="{{ p.url  | prepend: site.baseurl }}">
+	          &nbsp;&nbsp;&nbsp; <span style="font-size:6px">&gt;</span> &nbsp;{{ p.title }}
+	          </a>
+	        {% endfor %}
+	      </ul>
+	    </div>
+    {% else %}
+    		<div class="panel-heading">
+	    	  <h4 class="panel-title">
+			  {% assign item_url = section.url | prepend:"/docs/" | append:"/" %}
+	          {% assign p = site.docs | where:"url", item_url | first %}
+		    	  <a href="{{ p.url  | prepend: site.baseurl }}" >
+				{{ section.title }}
+		      </a>
+	      </h4>
+	    </div>
+    {% endif %}
   </div>
 {% endfor %}
 </div>
