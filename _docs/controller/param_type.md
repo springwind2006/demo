@@ -27,7 +27,8 @@ class Index extends Controller{
 }
 
 ```
-在show方法中$catid和$page参数，分别按照名称从路由参数中传入，访问http://127.0.0.1/show/12/1将会输出“12_1”。
+&nbsp;<a name="model">&nbsp;</a>
+在show方法中$catid和$page参数，分别按照名称从路由参数中传入，访问http://127.0.0.1/show/12/1将会输出“12_1”。  
 
 ***特别提示***：
 路由参数只可以应用在对外开放的控制器方法中，不能在内部标签调用方法和私有方法中调用

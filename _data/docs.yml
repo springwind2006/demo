@@ -38,6 +38,7 @@
   - view/index
   - view/tpl_output
   - view/tpl_tags
+  - view/tpl_comment
   - view/custom_tags
 
 - title: 模型
