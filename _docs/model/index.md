@@ -30,7 +30,7 @@ $user->save();
 $user=M('user')->where('id=1');
 $this->display('user',$user);
 ```
-在user.html模版中可以使用如下方式调用：
+在user.html模板中可以使用如下方式调用：
 
 ```
 <p>{$user.id}：{$user.name}-{$user.year}<p>

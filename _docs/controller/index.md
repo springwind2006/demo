@@ -55,8 +55,8 @@ class Index extends Controller{
 	}
 	
 	/**
-	* 内部模版标签调用方法，渲染后的子视图嵌入到主视图中
-	* @param int $id 由模版标签参数传入
+	* 内部模板标签调用方法，渲染后的子视图嵌入到主视图中
+	* @param int $id 由模板标签参数传入
 	*/
 	public function _show($id){
 		$this->assign('id',$id);

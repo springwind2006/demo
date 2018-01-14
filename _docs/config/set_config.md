@@ -1,5 +1,5 @@
 ---
-title: 设置配置
+title: 动态配置
 permalink: /docs/config/set_config/
 ---
 

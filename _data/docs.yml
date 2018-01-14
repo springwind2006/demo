@@ -14,6 +14,7 @@
   - config/application_config
   - config/get_config
   - config/set_config
+  - config/environment
 
 
 - title: 路由
@@ -30,6 +31,7 @@
   - controller/method_type
   - controller/param_type
   - controller/return_type
+  - controller/group
 
 - title: 视图
   docs:
@@ -46,4 +48,8 @@
   - advance/middleware
   - advance/container
   - advance/ioc
+  - advance/command
   - advance/swoole
+
+- title: 常见问题
+  url: fqa

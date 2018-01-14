@@ -36,12 +36,13 @@ Loader::app();
 
 <table>
     <tr><td><b>常量</b></td><td><b>描述</b></td></tr>
-    <tr><td>APP_PATH</td><td>应用目录</td></tr>
+    <tr><td>APP_PATH</td><td>应用所在路径（默认系统框架下的“app”目录）</td></tr>
+    <tr><td>DEFAULT_APP_NAME</td><td>默认应用名称（默认为“home”，配置为空可以使用单应用模式）</td></tr>
     <tr><td>ROOT_PATH</td><td>Public根目录</td></tr>
     <tr><td>VENDOR_PATH</td><td>外部库目录</td></tr>
     <tr><td>STORAGE_PATH</td><td>数据存储目录</td></tr>
-    <tr><td>APP_DEBUG</td><td>应用调试模式（默认为false）</td></tr>
-    <tr><td>STORAGE_TYPE</td><td>存储类型（默认为File）</td></tr>
+    <tr><td>APP_DEBUG</td><td>应用调试模式（默认为“false”）</td></tr>
+    <tr><td>STORAGE_TYPE</td><td>存储类型（默认为“File”）</td></tr>
 </table>
 
 

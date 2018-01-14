@@ -4,7 +4,7 @@ permalink: /docs/startup/quickstart/
 ---
 
 配置好运行环境之后，进入Storage/Conf目录，打开route.php文件  
-输入：
+输入如下代码：
 
 ```
 <?php
@@ -40,7 +40,7 @@ class Demo extends Controller{
 <?php
 return [
 	'default' => [
-		'/hello'=> 'Demo/hello@Home',
+		'/hello'=> 'Demo/hello@home',
 	]
 ];
 ```
