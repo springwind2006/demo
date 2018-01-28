@@ -92,6 +92,9 @@ $user=M('user','^@sso');
 $user=M('user','^');
 ```
 
+#### 4. 增加数据库服务器断开后自动重连
+可以在命令行和swoole模式下长时间运行数据库操作程序，如果数据库服务器因为操作时间间隔过长导致自动断开连接，程序自动重新连接数据库服务器，并正常处理数据库操作。
+
 **更多详细使用参见<a target="_blank" href="http://document.thinkphp.cn/manual_3_2.html#define_model">ThinkPHP3.2的模型相关文档</a>**
 
 
