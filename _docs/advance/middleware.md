@@ -8,8 +8,8 @@ permalink: /docs/advance/middleware/
 中间件通常用于授权或者处理请求过滤等。
 
 ### 2.中间件的定义
-路由的中间件在全局配置文件中定义，位于storage/Conf/middelware.php文件中。  
-控制器构造函数中引用的中间件可以在应用配置中定义，位于app/应用名称/Conf/middelware.php文件中。  
+路由的中间件在全局配置文件中定义，位于storage/Conf/middleware.php文件中。  
+控制器构造函数中引用的中间件可以在应用配置中定义，位于app/应用名称/Conf/middleware.php文件中。  
 例如以下定义了auth和convert中间件：
 
 ```
