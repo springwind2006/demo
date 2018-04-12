@@ -314,8 +314,9 @@ Steeze的模版布局是为了弥补模板包含功能的缺陷。多个模版�
 </html>
 ```
    
-**特别提示：由于系统对模板的缓存机制，如果对预先定义好的视图布局文件再次进行修改。新的布局不会立即生效，需要更新模版缓存后才生效。**
-**因此在日常的开发中，布局文件一旦定义好之后，后期不应该频繁修改。**
+**特别提示：**
+1. 由于系统对模板的缓存机制，如果对预先定义好的视图布局文件再次进行修改。新的布局不会立即生效，需要更新模版缓存后才生效。因此在日常的开发中，布局文件一旦定义好之后，后期不应该频繁修改。  
+2. 在使用布局的模版文件中，如果assgin标签在slice标签外部，会作为全局模版变量，布局文件或slice内部定义的同名模版变量会覆盖同名全局模版变量。
 
 ## 六、调用控制器标签方法
 使用action标签调用控制器的标签方法，极大地方便了应用中模块化开发。 
@@ -525,7 +526,10 @@ import标签的主要属性如下：
 ### 4. 分类名称的自动推导
 
 上述范例中“css/"的路径，是系统根据文件名称推断出文件类型，从而自动生成的。  
-自动类型推导仅支持css、js和图片文件类型（jpg、jpeg、png、gif、bmp）。      
+自动类型推导仅支持css、js和图片文件类型（jpg、jpeg、png、gif、bmp）。  
+自动推导的后的文件路径，会在现有的路径前加上该类型资源所在的目录（相对于静态资源目录）：  
+css文件对应的路径为“css/”，js文件为“js/”，图片文件为“images/”。
+    
 如果file属性值不是以扩展名结尾，系统无法根据文件名称推导类型，需要使用type属性指定：
 
 ```
@@ -537,16 +541,30 @@ import标签的主要属性如下：
 <link rel="stylesheet" type="text/css" href="/assets/app/home/default/css/index.css?version=1.0" />
 ```
   
-如果file属性值中包含"/"（或者包含base属性），系统则不会根据文件类型自动推导分类名称，例如：
+如果包含base属性（或以该资源类型目录开头），系统则不会根据文件类型自动推导分类名称，例如：
   
 ```
- <import file="index/user.css"/>
+ <import file="user.css" base="index"/>
+ <import file="css/info.css" />
 ```
 生成的标签代码为：
 
 ```
 <link rel="stylesheet" type="text/css" href="/assets/app/home/default/index/user.css" />
+<link rel="stylesheet" type="text/css" href="/assets/app/home/default/css/info.css" />
 ```
+   
+以非资源类型目录开头（不包括“/”），系统可以完成推导：
+
+```
+ <import file="index/user.css" />
+```
+生成的前端代码为：
+
+```
+<link rel="stylesheet" type="text/css" href="/assets/app/home/default/css/index/user.css" />
+```
+
 
 ### 5. 引入多个资源文件
 引入多个资源文件，file属性的值可以使用半角逗号“,”分割，例如：
