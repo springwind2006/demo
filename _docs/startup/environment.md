@@ -5,7 +5,7 @@ permalink: /docs/startup/environment/
 
 
 ### 1. PHP版本及扩展要求
-- PHP >= 5.6
+- PHP >= 5.4
 - PHP PDO 扩展
 - PHP Mbstring 扩展
 - PHP XML 扩展
