@@ -9,7 +9,7 @@ permalink: /docs/advance/middleware/
 
 ### 2.中间件的定义
 路由的中间件在全局配置或应用配置文件中定义，
-位于storage/Conf/middleware.php 或 app/应用名称/Conf/middleware.php文件中。   
+全局配置位于storage/Conf/middleware.php，应用配置文件位于app/应用名称/Conf/middleware.php文件中。   
 例如以下定义了auth和convert中间件：
 
 ```
