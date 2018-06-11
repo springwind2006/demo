@@ -85,7 +85,7 @@ class Index extends Controller{
 可以指定不需要执行的方法：
 
 ```
-//执行hello方法不会执行中国件
+//执行hello方法不会执行中间件
 $this->middleware('auth',['hello']);
 ```
 
