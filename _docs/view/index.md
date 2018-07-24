@@ -84,7 +84,7 @@ $this->display('edit');
 表示调用当前模块下面的edit模板
 
 ```
-$this->display('Member:read');
+$this->display('Member/read');
 ```
 表示调用Member模块下面的read模板。
    
@@ -118,7 +118,7 @@ fetch方法的用法和display基本一致（只是不需要指定输出编码�
 模板文件的调用方法和display方法完全一样，区别就在于fetch方法渲染后不是直接输出，而是返回渲染后的内容，例如：
 
 ```
-$content = $this->fetch('User:add');
+$content = $this->fetch('User/add');
 ```
 使用fetch方法获取渲染内容后，你可以进行过滤和替换等操作，或者用于对输出的复杂需求。
    
