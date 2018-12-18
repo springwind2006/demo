@@ -193,5 +193,19 @@ Email：{$data->email}
 <?php --$year;?>
 ```
 
+### 6. 其它输出
+支持动态输出资源文件的URL地址  
+如下所示：
+
+```
+{@index.js}  //使用自动扩展名解析
+{@#test.js}  //不适用自动扩展名解析
+```
+编译后的结果为：
+
+```
+<?php asset('index.js');?> //输出：http://www.steeze.cn/assets/js/index.js
+<?php asset('#test.js');?> //输出：http://www.steeze.cn/assets/test.js
+```
 
 
