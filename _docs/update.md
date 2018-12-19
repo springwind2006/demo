@@ -12,25 +12,25 @@ permalink: /docs/update/
 ### 系统类库
 - 优化异常处理类，删除原来的Exception类，新增ErrorException类，用于处理系统错误和异常；
 - 扩展容器功能（Container）：
-- 1. 将原先的callMethod方法重命名为invokeMethod、callClosure重命名为invokeFunc；
-- 2. invokeFunc方法支持传入一般函数名称，如果传入Closure（匿名函数），则$this指向容器对象；
-- 3. 新增invoke方法，支持一般函数、Closure（匿名函数）和对象方法的调用；
-- 4. 增强模型对象（Model）功能，可以根据变量名称自动设置注入模型的操作表名；
+- 1、将原先的callMethod方法重命名为invokeMethod、callClosure重命名为invokeFunc；
+- 2、invokeFunc方法支持传入一般函数名称，如果传入Closure（匿名函数），则$this指向容器对象；
+- 3、新增invoke方法，支持一般函数、Closure（匿名函数）和对象方法的调用；
+- 4、增强模型对象（Model）功能，可以根据变量名称自动设置注入模型的操作表名；
 - 新增Request对象中input方法，用于获取POST/GET输入，同时支持输入处理；
 - 更新Pager类，将getListPager重命名为getPager，删除getDetailPager函数；
 - 更新视图类（View）：
-- 1. 将访问权限为final，不支持继承，由系统自动创建并注入应用对象，可通过getContext方法获取；
-- 2. 新增getPager方法，用于获取列表分页信息；
-- 3. display和fetch方法的第二个参数支持传入模板变量组成的数组；
-- 4. 更新render方法，用于渲染控制器对象的方法（以前render方法用于输出内容）
+- 1、将访问权限为final，不支持继承，由系统自动创建并注入应用对象，可通过getContext方法获取；
+- 2、新增getPager方法，用于获取列表分页信息；
+- 3、display和fetch方法的第二个参数支持传入模板变量组成的数组；
+- 4、更新render方法，用于渲染控制器对象的方法（以前render方法用于输出内容）
 - 更新控制器类（Controller）：
-- 1. 增加对上下文应用对象的感知，系统创建控制器实例时自动注入应用对象，可通过getContext方法获取；
-- 2. 新增getPager方法，用于获取列表分页信息；
-- 3. display和fetch方法的第二个参数支持传入模板变量组成的数组；
-- 4. 新增render方法，用于渲染其它控制器对象的方法；
-- 5. 新增redirect方法，用于实现页面跳转；
-- 6. 删除run方法，控制器的运行转为系统接管；
-- 7. 更新display、show、fetch、buildHtml、assign、error、success、ajaxReturn方法的访问权限为public
+- 1、增加对上下文应用对象的感知，系统创建控制器实例时自动注入应用对象，可通过getContext方法获取；
+- 2、新增getPager方法，用于获取列表分页信息；
+- 3、display和fetch方法的第二个参数支持传入模板变量组成的数组；
+- 4、新增render方法，用于渲染其它控制器对象的方法；
+- 5、新增redirect方法，用于实现页面跳转；
+- 6、删除run方法，控制器的运行转为系统接管；
+- 7、更新display、show、fetch、buildHtml、assign、error、success、ajaxReturn方法的访问权限为public
 - 新增中间件基类Middleware，如果用户自定义中间件继承自该类，在中间件中可以直接通过context属性获取上下文应用对象；
 
 ### 系统全局函数
