@@ -4,15 +4,15 @@ permalink: /docs/startup/install/
 ---
 
 ### 1. 获取Steeze
-Steeze框架已托管在github上，地址是 <https://github.com/springwind2006/steeze> 
+Steeze框架已托管在github上，地址是 <https://github.com/steezer/steeze> 
   
 安装git后执行如下命令即可获取代码文件：
 
 ```
-git clone https://github.com/springwind2006/steeze.git
+git clone https://github.com/steezer/steeze.git
 ```
 
-也可以进入 <https://github.com/springwind2006/steeze/releases>下载最新版本  
+也可以进入 <https://github.com/steezer/steeze/releases>下载最新版本  
   
 下载完成并解压，进入系统框架根目录
 

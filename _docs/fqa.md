@@ -4,7 +4,7 @@ permalink: /docs/fqa/
 ---
 
 #### 1. Steeze框架是免费的吗？
-Steeze框架有个人开发，是完全免费的，您可以无限制的使用和修改框架的代码，[官方github](https://github.com/springwind2006/steeze)会不定期发布最新的升级版本。
+Steeze框架有个人开发，是完全免费的，您可以无限制的使用和修改框架的代码，[官方github](https://github.com/steezer/steeze)会不定期发布最新的升级版本。
   
 #### 2. Steeze和ThinkPHP框架相比有什么特别的地方？
 Steeze的Model层使用ThinkPHP实现，同时优化了部分代码，简化了路由配置，增加了中间件、容器和依赖注入功能。同时支持控制器分组功能。

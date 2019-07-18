@@ -10,7 +10,7 @@
 gem install bundler
 
 # 克隆项目project
-git clone https://github.com/springwind2006/steeze.github.io.git
+git clone https://github.com/steezer/steeze.github.io.git
 cd steeze.github.io
 
 # 运行jekyll
