@@ -70,7 +70,7 @@ return [
 	]
 ];
 ```
-例如：客户端访问/article/list/12-31，路由变量catid设置为12、page设置为31。  
+例如：客户端访问/article/list/12-31，路由变量catid设置为12、page设置为31。   
 
 6、在1.3.1版本之后，新增对客户端变量配置路由参数的支持，客户端参数只能位于以“#”分割的右侧，
 多个客户端变量以“&”分割。
@@ -79,8 +79,8 @@ return [
 return [
 	'default'=> [
 		'/{c}/{a}#p={page?}'=> '{c}/{a}@home', //获取POST（或GET）的p参数到路由参数page
-        '/{c}/{a}#page={page?}&id={id|d?}'=> '{c}/{a}@home', //多个参数设置
-        '/{c}/{a}#view={page?}_{id|d?}'=> '{c}/{a}@home', //获取同一个客户端参数值到多个路由参数
+		'/{c}/{a}#page={page?}&id={id|d?}'=> '{c}/{a}@home', //多个参数设置
+		'/{c}/{a}#view={page?}_{id|d?}'=> '{c}/{a}@home', //获取同一个客户端参数值到多个路由参数
 		'/test#{page|d?}'=> function($page){
 			echo $page;
 		}
