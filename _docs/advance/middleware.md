@@ -59,7 +59,7 @@ public function handle(\Closure $next,$request,$response){
 
 ### 4. 中间件的路由配置
 中间件可以在路由中配置，参考[路由/路由中间件](/docs/route/route_middleware/)。  
-也可以在类的控制器构造方法中调用中间件：
+也可以在控制器静态方法middleware中返回中间件：
 
 ```
 <?php
@@ -68,9 +68,27 @@ use Library\Controller;
 
 class Index extends Controller{
 	
-	public function __construct(){
+	public static function middleware(){
 		//控制器构造方法中使用中间件
-		$this->middleware('auth');
+		return 'auth';
+	}
+	
+}
+```
+以上执行控制器的所有方法前都会先执行中间件，  
+可以指定不需要执行的方法：
+
+```
+//执行hello方法不会执行中间件
+<?php
+namespace App\Home\Controller;
+use Library\Controller;
+
+class Index extends Controller{
+	
+	public static function middleware(){
+		//控制器构造方法中使用中间件
+		return 'auth:hello';
 	}
 	
 	public function hello(){
@@ -80,13 +98,6 @@ class Index extends Controller{
 	}	
 	
 }
-```
-以上执行控制器的所有方法前都会先执行中间件，  
-可以指定不需要执行的方法：
-
-```
-//执行hello方法不会执行中间件
-$this->middleware('auth',['hello']);
 ```
 
 
