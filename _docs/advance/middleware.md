@@ -99,6 +99,26 @@ class Index extends Controller{
 	
 }
 ```
+也可以使用常量定义中间件
+```
+//执行hello方法不会执行中间件
+<?php
+namespace App\Home\Controller;
+use Library\Controller;
+
+class Index extends Controller{
+	
+	const MIDDLEWARE='auth:hello';
+	
+	public function hello(){
+	}
+	
+	public function test(){
+	}	
+	
+}
+```
+
 
 
 
