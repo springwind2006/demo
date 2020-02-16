@@ -97,7 +97,7 @@ return [
 		'/test#{page|d?}'=> function($page){
 			echo $page;
 		},
-        '/**'=>'index/hello',  //默认路由
+		'/**'=>'index/hello',  //默认路由
 	]
 ];
 ```  
