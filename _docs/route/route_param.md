@@ -89,6 +89,21 @@ return [
 ```
 注意：如果客户端为POST方法，优先获取POST变量，然后获取GET变量
 
+7、在1.3.2版本之后，新增默认路由设置支持，例如：  
+```
+return [
+	'default'=> [
+		'/{c}/{a}'=> '{c}/{a}@home', //获取POST（或GET）的p参数到路由参数page
+		'/test#{page|d?}'=> function($page){
+			echo $page;
+		},
+        '/**'=>'index/hello',  //默认路由
+	]
+];
+```  
+注意：默认路由位于所有配置的路由后面，否则默认路由后面的配置无效
+
+
 
 
 
